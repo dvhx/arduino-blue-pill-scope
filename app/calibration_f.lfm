@@ -1,0 +1,277 @@
+object Calibration: TCalibration
+  Left = 420
+  Height = 450
+  Top = 242
+  Width = 516
+  Caption = 'Calibration'
+  ClientHeight = 450
+  ClientWidth = 516
+  Constraints.MinHeight = 212
+  Constraints.MinWidth = 516
+  OnShow = FormShow
+  LCLVersion = '2.2.0.4'
+  object Label1: TLabel
+    Left = 8
+    Height = 17
+    Top = 12
+    Width = 114
+    Caption = 'Voltage (~100%)'
+  end
+  object edtVoltage1: TFloatSpinEditEx
+    Left = 141
+    Height = 25
+    Top = 8
+    Width = 87
+    MaxLength = 0
+    TabOrder = 0
+    OnChange = edtVoltage1Change
+    DecimalPlaces = 3
+    Value = 12
+  end
+  object btnMeasure1: TButton
+    Left = 237
+    Height = 25
+    Top = 8
+    Width = 115
+    Caption = 'Measure'
+    OnClick = btnMeasure1Click
+    TabOrder = 1
+  end
+  object Label2: TLabel
+    Left = 365
+    Height = 17
+    Top = 12
+    Width = 68
+    Caption = 'ADC code:'
+  end
+  object labCode1: TLabel
+    Left = 437
+    Height = 17
+    Top = 12
+    Width = 67
+    Caption = '0000.000'
+  end
+  object Label3: TLabel
+    Left = 8
+    Height = 17
+    Top = 45
+    Width = 105
+    Caption = 'Voltage (~75%)'
+  end
+  object edtVoltage2: TFloatSpinEditEx
+    Left = 141
+    Height = 25
+    Top = 40
+    Width = 87
+    MaxLength = 0
+    TabOrder = 2
+    OnChange = edtVoltage1Change
+    DecimalPlaces = 3
+    Value = 7
+  end
+  object btnMeasure2: TButton
+    Left = 237
+    Height = 25
+    Top = 40
+    Width = 115
+    Caption = 'Measure'
+    OnClick = btnMeasure2Click
+    TabOrder = 3
+  end
+  object Label4: TLabel
+    Left = 365
+    Height = 17
+    Top = 45
+    Width = 68
+    Caption = 'ADC code:'
+  end
+  object labCode2: TLabel
+    Left = 437
+    Height = 17
+    Top = 45
+    Width = 67
+    Caption = '0000.000'
+  end
+  object Label5: TLabel
+    Left = 8
+    Height = 17
+    Top = 77
+    Width = 105
+    Caption = 'Voltage (~50%)'
+  end
+  object edtVoltage3: TFloatSpinEditEx
+    Left = 141
+    Height = 25
+    Top = 72
+    Width = 87
+    MaxLength = 0
+    TabOrder = 4
+    DecimalPlaces = 3
+  end
+  object btnMeasure3: TButton
+    Left = 237
+    Height = 25
+    Top = 72
+    Width = 115
+    Caption = 'Measure'
+    OnClick = btnMeasure3Click
+    TabOrder = 5
+  end
+  object labCode3: TLabel
+    Left = 437
+    Height = 17
+    Top = 77
+    Width = 67
+    Caption = '0000.000'
+  end
+  object Label6: TLabel
+    Left = 365
+    Height = 17
+    Top = 77
+    Width = 68
+    Caption = 'ADC code:'
+  end
+  object Label8: TLabel
+    Left = 8
+    Height = 17
+    Top = 108
+    Width = 105
+    Caption = 'Voltage (~25%)'
+  end
+  object edtVoltage4: TFloatSpinEditEx
+    Left = 141
+    Height = 25
+    Top = 104
+    Width = 87
+    MaxLength = 0
+    TabOrder = 6
+    DecimalPlaces = 3
+    Value = -7
+  end
+  object btnMeasure4: TButton
+    Left = 237
+    Height = 25
+    Top = 104
+    Width = 115
+    Caption = 'Measure'
+    OnClick = btnMeasure4Click
+    TabOrder = 7
+  end
+  object Label9: TLabel
+    Left = 365
+    Height = 17
+    Top = 108
+    Width = 68
+    Caption = 'ADC code:'
+  end
+  object labCode4: TLabel
+    Left = 437
+    Height = 17
+    Top = 108
+    Width = 67
+    Caption = '0000.000'
+  end
+  object Label7: TLabel
+    Left = 8
+    Height = 17
+    Top = 141
+    Width = 96
+    Caption = 'Voltage (~0%)'
+  end
+  object edtVoltage5: TFloatSpinEditEx
+    Left = 141
+    Height = 25
+    Top = 136
+    Width = 87
+    MaxLength = 0
+    TabOrder = 8
+    DecimalPlaces = 3
+    Value = -12
+  end
+  object btnMeasure5: TButton
+    Left = 237
+    Height = 25
+    Top = 136
+    Width = 115
+    Caption = 'Measure'
+    OnClick = btnMeasure5Click
+    TabOrder = 9
+  end
+  object Label10: TLabel
+    Left = 365
+    Height = 17
+    Top = 141
+    Width = 68
+    Caption = 'ADC code:'
+  end
+  object labCode5: TLabel
+    Left = 437
+    Height = 17
+    Top = 141
+    Width = 67
+    Caption = '0000.000'
+  end
+  object btnSave1: TButton
+    Left = 301
+    Height = 25
+    Top = 416
+    Width = 123
+    Anchors = [akLeft, akBottom]
+    Caption = '&Save range #?'
+    OnClick = btnSave1Click
+    TabOrder = 10
+  end
+  object btnCancel1: TButton
+    Left = 429
+    Height = 25
+    Top = 416
+    Width = 75
+    Anchors = [akLeft, akBottom]
+    Caption = '&Cancel'
+    OnClick = btnCancel1Click
+    TabOrder = 11
+  end
+  object Chart1: TChart
+    Left = 8
+    Height = 232
+    Top = 176
+    Width = 496
+    AxisList = <    
+      item
+        Marks.LabelBrush.Style = bsClear
+        Minors = <>
+        Title.LabelFont.Orientation = 900
+        Title.LabelBrush.Style = bsClear
+      end    
+      item
+        Alignment = calBottom
+        Marks.LabelBrush.Style = bsClear
+        Minors = <>
+        Title.LabelBrush.Style = bsClear
+      end>
+    Title.Text.Strings = (
+      'TAChart'
+    )
+    Anchors = [akTop, akLeft, akRight, akBottom]
+  end
+  object Label11: TLabel
+    Left = 8
+    Height = 17
+    Top = 421
+    Width = 58
+    Caption = 'Voltage: '
+  end
+  object labVoltage1: TLabel
+    Left = 72
+    Height = 17
+    Top = 421
+    Width = 49
+    Caption = '0.000V'
+  end
+  object Timer1: TTimer
+    Interval = 250
+    OnTimer = Timer1Timer
+    Left = 80
+    Top = 200
+  end
+end

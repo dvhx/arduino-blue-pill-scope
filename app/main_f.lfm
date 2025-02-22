@@ -1,0 +1,257 @@
+object Main: TMain
+  Left = 344
+  Height = 664
+  Top = 218
+  Width = 851
+  Caption = 'Main'
+  ClientHeight = 637
+  ClientWidth = 851
+  Menu = MainMenu1
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  Position = poDefault
+  LCLVersion = '2.2.0.4'
+  object Memo1: TMemo
+    Left = 655
+    Height = 616
+    Top = 0
+    Width = 196
+    Align = alRight
+    TabOrder = 0
+  end
+  object StatusBar1: TStatusBar
+    Left = 0
+    Height = 21
+    Top = 616
+    Width = 851
+    Panels = <    
+      item
+        Width = 50
+      end    
+      item
+        Bevel = pbNone
+        Text = 'Time:'
+        Width = 45
+      end    
+      item
+        Width = 100
+      end    
+      item
+        Text = 'Voltage:'
+        Width = 60
+      end    
+      item
+        Width = 50
+      end>
+    SimplePanel = False
+  end
+  object Chart1: TChart
+    Left = 0
+    Height = 616
+    Top = 0
+    Width = 650
+    AxisList = <    
+      item
+        Marks.LabelBrush.Style = bsClear
+        Minors = <>
+        Title.LabelFont.Orientation = 900
+        Title.LabelBrush.Style = bsClear
+      end    
+      item
+        Intervals.MaxLength = 80
+        Intervals.MinLength = 20
+        Intervals.NiceSteps = '0.01|0.1|0.2|0.5|1.0'
+        Alignment = calBottom
+        Marks.Format = '%0:.9g'
+        Marks.LabelBrush.Style = bsClear
+        Marks.Style = smsCustom
+        Minors = <>
+        Title.LabelBrush.Style = bsClear
+        OnGetMarkText = Chart1AxisList1GetMarkText
+      end>
+    Title.Text.Strings = (
+      'TAChart'
+    )
+    OnAfterPaint = Chart1AfterPaint
+    Align = alClient
+    OnMouseDown = Chart1MouseDown
+    OnMouseMove = Chart1MouseMove
+    OnMouseUp = Chart1MouseUp
+  end
+  object Splitter1: TSplitter
+    Left = 650
+    Height = 616
+    Top = 0
+    Width = 5
+    Align = alRight
+    ResizeAnchor = akRight
+  end
+  object MainMenu1: TMainMenu
+    Left = 236
+    Top = 52
+    object mnuData1: TMenuItem
+      Caption = '&Data'
+      object mnuDataRefresh1: TMenuItem
+        Caption = '&Refresh'
+        ShortCut = 112
+        OnClick = mnuDataRefresh1Click
+      end
+      object mnuDataContinuousMode1: TMenuItem
+        AutoCheck = True
+        Caption = '&Continuous mode'
+        ShortCut = 113
+        OnClick = mnuDataContinuousMode1Click
+      end
+      object mnuDataDebug1: TMenuItem
+        Caption = 'Get debug info...'
+        ShortCut = 114
+        OnClick = mnuDataDebug1Click
+      end
+      object mnuDataShowValues1: TMenuItem
+        AutoCheck = True
+        Caption = '&Show values'
+        OnClick = mnuDataShowValues1Click
+      end
+    end
+    object mnuPort1: TMenuItem
+      Caption = '&Port'
+      GroupIndex = 1
+      OnClick = mnuPort1Click
+    end
+    object mnuXAxis1: TMenuItem
+      Caption = '&X-axis'
+      object mnuSampling1: TMenuItem
+        Tag = 1
+        Caption = '1.5cycle (&1)'
+        GroupIndex = 1
+        RadioItem = True
+        OnClick = mnuSampling1Click
+      end
+      object mnuSampling2: TMenuItem
+        Tag = 2
+        Caption = '7.5cycle (&2)'
+        GroupIndex = 1
+        RadioItem = True
+        OnClick = mnuSampling1Click
+      end
+      object mnuSampling3: TMenuItem
+        Tag = 3
+        Caption = '13.5cycle (&3)'
+        GroupIndex = 1
+        RadioItem = True
+        OnClick = mnuSampling1Click
+      end
+      object mnuSampling4: TMenuItem
+        Tag = 4
+        Caption = '28.5cycle (&4)'
+        GroupIndex = 1
+        RadioItem = True
+        OnClick = mnuSampling1Click
+      end
+      object mnuSampling5: TMenuItem
+        Tag = 5
+        Caption = '41.5cycle (&5)'
+        GroupIndex = 1
+        RadioItem = True
+        OnClick = mnuSampling1Click
+      end
+      object mnuSampling6: TMenuItem
+        Tag = 6
+        Caption = '55.5cycle (&6)'
+        GroupIndex = 1
+        RadioItem = True
+        OnClick = mnuSampling1Click
+      end
+      object mnuSampling7: TMenuItem
+        Tag = 7
+        Caption = '71.5cycle (&7)'
+        GroupIndex = 1
+        RadioItem = True
+        OnClick = mnuSampling1Click
+      end
+      object mnuSampling8: TMenuItem
+        Tag = 8
+        Caption = '239.5cycle (&8)'
+        GroupIndex = 1
+        RadioItem = True
+        OnClick = mnuSampling1Click
+      end
+    end
+    object mnuYAxis1: TMenuItem
+      Caption = '&Y-axis'
+      object mnuYAxisAutomatic1: TMenuItem
+        AutoCheck = True
+        Caption = 'Automatic'
+        OnClick = mnuYAxisAutomatic1Click
+      end
+      object mnuYAxisSetMax1: TMenuItem
+        Caption = 'Set max...'
+        OnClick = mnuYAxisSetMax1Click
+      end
+      object mnuYAxisSetMin1: TMenuItem
+        Caption = 'Set min...'
+        OnClick = mnuYAxisSetMin1Click
+      end
+    end
+    object mnuRanges1: TMenuItem
+      Caption = '&Range'
+      object mnuRange1: TMenuItem
+        Tag = 1
+        Caption = '&1'
+        RadioItem = True
+        OnClick = mnuRange1Click
+      end
+      object mnuRange2: TMenuItem
+        Tag = 2
+        Caption = '&2'
+        RadioItem = True
+        OnClick = mnuRange1Click
+      end
+      object mnuRange3: TMenuItem
+        Tag = 3
+        Caption = '&3'
+        RadioItem = True
+        OnClick = mnuRange1Click
+      end
+      object mnuRange4: TMenuItem
+        Tag = 4
+        Caption = '&4'
+        RadioItem = True
+        OnClick = mnuRange1Click
+      end
+    end
+    object mnuCalibration1: TMenuItem
+      Caption = '&Calibration'
+      object mnuCalibrationRange1: TMenuItem
+        Tag = 1
+        Caption = 'Range &1 (-12V..+12V)'
+        OnClick = mnuCalibration1Click
+      end
+      object mnuCalibrationRange2: TMenuItem
+        Tag = 2
+        Caption = 'Range &2 (0..+5V)'
+        OnClick = mnuCalibration1Click
+      end
+      object mnuCalibrationRange3: TMenuItem
+        Tag = 3
+        Caption = 'Range &3 (-1V..+1V)'
+        OnClick = mnuCalibration1Click
+      end
+      object mnuCalibrationRange4: TMenuItem
+        Tag = 4
+        Caption = 'Range &4 (-0.1V..+0.1V)'
+        OnClick = mnuCalibration1Click
+      end
+      object mnuCalibrationTime1: TMenuItem
+        Caption = '&Time calibration (X-axis)'
+        OnClick = mnuCalibrationTime1Click
+      end
+    end
+  end
+  object Timer1: TTimer
+    Enabled = False
+    OnTimer = Timer1Timer
+    Left = 163
+    Top = 121
+  end
+end
